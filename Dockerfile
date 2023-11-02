@@ -19,4 +19,5 @@ CMD ["npm", "run", "start"]
 
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
+CMD ["nginx", "-g", "daemon-off"]
